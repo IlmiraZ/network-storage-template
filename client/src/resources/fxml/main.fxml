@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.gb.storage.client.fxFiles.MainController">
+    <MenuBar>
+        <Menu text="Menu">
+            <MenuItem onAction="#actionRefresh" text="Refresh" />
+            <MenuItem onAction="#actionCreateDir" text="Create directory" />
+            <MenuItem onAction="#actionUploadFile" text="Upload" />
+            <MenuItem text="Download" />
+            <MenuItem text="Delete" />
+            <MenuItem onAction="#actionExit" text="Exit" />
+        </Menu>
+    </MenuBar>
+    <HBox spacing="3.0">
+        <Button focusTraversable="false" maxWidth="Infinity" onAction="#actionRefresh" text="Refresh" HBox.hgrow="ALWAYS" />
+        <Button focusTraversable="false" maxWidth="Infinity" onAction="#actionCreateDir" text="Create directory" HBox.hgrow="ALWAYS" />
+        <Button focusTraversable="false" maxWidth="Infinity" onAction="#actionUploadFile" text="Upload" HBox.hgrow="ALWAYS" />
+        <Button focusTraversable="false" maxWidth="Infinity" onAction="#actionFileDownload" text="Download" HBox.hgrow="ALWAYS" />
+        <Button focusTraversable="false" maxWidth="Infinity" onAction="#actionFileDelete" text="Delete" HBox.hgrow="ALWAYS" />
+        <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+        </padding>
+    </HBox>
+    <TableView fx:id="tableView" focusTraversable="true" VBox.vgrow="ALWAYS" />
+    <TextField fx:id="textField" editable="false" focusTraversable="false" VBox.vgrow="ALWAYS" />
+</VBox>
