@@ -24,7 +24,7 @@
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
-                            <mainClass>ru.gb.storage.server.Server</mainClass>
+                            <mainClass>ru.gb.storage.server.ServerApp</mainClass>
                         </configuration>
                     </execution>
                 </executions>
@@ -37,6 +37,12 @@
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.34.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.gb.network-storage</groupId>
+            <artifactId>commons</artifactId>
+            <version>DEV-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
