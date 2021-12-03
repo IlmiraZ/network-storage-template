@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import ru.gb.storage.commons.handler.JsonDecoder;
 import ru.gb.storage.commons.handler.JsonEncoder;
 import ru.gb.storage.server.database.Database;
+import ru.gb.storage.server.handler.MessageHandler;
 
 @Slf4j
 public class Server {
@@ -33,11 +34,11 @@ public class Server {
                         @Override
                         protected void initChannel(SocketChannel channel) {
                             channel.pipeline().addLast(
-                                    new LengthFieldBasedFrameDecoder(1024 * 1024, 0, 3, 0, 3),
-                                    new LengthFieldPrepender(3),
+                                    new LengthFieldBasedFrameDecoder(1024 * 1024, 0, 10, 0, 10),
+                                    new LengthFieldPrepender(10),
                                     new JsonDecoder(),
-                                    new JsonEncoder()
-                                   // new Handler()
+                                    new JsonEncoder(),
+                                    new MessageHandler()
                             );
                         }
                     });
