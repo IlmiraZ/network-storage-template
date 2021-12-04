@@ -4,17 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @Data
-public class AuthRequest extends Message{
-    private final String login;
-    private final String password;
-
+public class DirDownRequest extends Message {
+    private final String name;
 
     @Override
     public CommandType getType() {
-        return CommandType.AUTH_REQUEST;
+        return CommandType.DIR_DOWN_REQUEST;
     }
 }
